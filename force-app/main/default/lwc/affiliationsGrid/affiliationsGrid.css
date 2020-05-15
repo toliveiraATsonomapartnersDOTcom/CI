@@ -1,0 +1,32 @@
+.card-wrapper {
+    border: 1px solid rgb(221, 219, 218);
+    border-top-width: 0;
+    border-radius: .25rem;
+}
+
+.related-list-top-border {
+    border-top: 3px solid rgb(176, 173, 171);
+    border-top-left-radius: .25rem;
+    border-top-right-radius: .25rem;
+}
+
+.title-card-wrapper {
+    padding: .75rem 1rem 0
+}
+
+.card-header-title {
+    height: 2.25rem;
+}
+
+.card-header-title .slds-page-header__title {
+    font-size: 1rem;
+}
+
+.card-subheader {
+    line-height: 1.5;
+}
+
+.grid-container {
+    max-height: 300px;
+    padding-bottom: .75rem;
+}

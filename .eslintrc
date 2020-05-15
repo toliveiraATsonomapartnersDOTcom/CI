@@ -1,0 +1,15 @@
+{
+    "root": true,
+    "extends": "@salesforce/eslint-config-lwc/recommended",
+    "env": {
+        "es6": true,
+        "mocha": true,
+        "node": true
+    },
+    "parserOptions": {
+        "ecmaVersion": 9
+    },
+    "rules": {
+        "strict": ["error", "global"]
+    }
+}

@@ -1,0 +1,17 @@
+<aura:component implements="force:hasRecordId,flexipage:availableForRecordHome">
+    <aura:attribute name="width" type="String"/>
+    <aura:attribute name="filteredTypes" type="String" />
+    <aura:attribute name="excludedTypes" type="String" />
+    <aura:attribute name="fieldSet" type="String" />
+    <aura:attribute name="componentTitle" type="String" />
+    <!--This uses a hack that assumes only Edit event save will cause a Toast Message, which is currently the case.-->
+    <aura:handler event="force:showToast" action="{!c.handleSaveSuccess}"/>
+    <aura:handler event="force:refreshView" action="{!c.handleRefreshedView}"/>
+
+    <lightning:flexipageRegionInfo width="{!v.width}"/>
+    <c:affiliationsGrid recordId="{!v.recordId}" onnewclick="{!c.openNewRecord}" 
+        flexipageRegionWidth="{!v.width}" filteredTypes="{!v.filteredTypes}"
+        excludedTypes="{!v.excludedTypes}" fieldSet="{!v.fieldSet}"
+        componentTitle="{!v.componentTitle}"
+        oneditclick="{!c.editRecord}" aura:id="affiliationsGrid" />
+</aura:component>

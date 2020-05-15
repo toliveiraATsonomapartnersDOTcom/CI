@@ -1,0 +1,3 @@
+<aura:documentation>
+	<aura:description>An Aura wrapper for the Affiliations Grid Lightning Web Component. The primary purpose of this wrapper is so that the new button can pass in default values to the new Affiliation.</aura:description>
+</aura:documentation>

@@ -1,5 +1,354 @@
 {
-  "orgName": "Demo company",
   "edition": "Developer",
-  "features": []
+  "hasSampleData": false,
+  "features": [
+    "API",
+    "AuthorApex",
+    "ContactsToMultipleAccounts",
+    "Entitlements",
+    "ForceComPlatform",
+    "LightningSalesConsole",
+    "LightningScheduler",
+    "LightningServiceConsole",
+    "MarketingUser",
+    "PlatformCache",
+    "ProcessBuilder",
+    "ProductsAndSchedules",
+    "RecordTypes",
+    "SalesUser",
+    "ServiceCloud",
+    "ServiceUser",
+    "Workflow",
+    "WorkflowFlowActionFeature",
+    "LiveAgent"
+  ],
+  "settings": {
+    "accountSettings": {
+      "showViewHierarchyLink": true
+    },
+    "actionsSettings": {
+      "enableDefaultQuickActionsOn": true
+    },
+    "activitiesSettings": {
+      "allowUsersToRelateMultipleContactsToTasksAndEvents": false,
+      "autoRelateEventAttendees": false,
+      "enableActivityReminders": true,
+      "enableClickCreateEvents": false,
+      "enableDragAndDropScheduling": true,
+      "enableEmailTracking": true,
+      "enableGroupTasks": true,
+      "enableListViewScheduling": false,
+      "enableLogNote": false,
+      "enableMultidayEvents": false,
+      "enableRecurringEvents": true,
+      "enableRecurringTasks": true,
+      "enableRollUpActivToContactsAcct": false,
+      "enableSidebarCalendarShortcut": false,
+      "enableSimpleTaskCreateUI": false,
+      "enableUNSTaskDelegatedToNotifications": false,
+      "enableUserListViewCalendars": false,
+      "showCustomLogoMeetingRequests": false,
+      "showEventDetailsMultiUserCalendar": false,
+      "showHomePageHoverLinksForEvents": false,
+      "showMyTasksHoverLinks": false
+    },
+    "apexSettings": {
+      "enableAggregateCodeCoverageOnly": false,
+      "enableApexAccessRightsPref": false,
+      "enableApexApprovalLockUnlock": false,
+      "enableApexCtrlImplicitWithSharingPref": false,
+      "enableApexPropertyGetterPref": false,
+      "enableAuraApexCtrlAuthUserAccessCheckPref": false,
+      "enableAuraApexCtrlGuestUserAccessCheckPref": false,
+      "enableCompileOnDeploy": false,
+      "enableDisableParallelApexTesting": false,
+      "enableDoNotEmailDebugLog": false,
+      "enableGaplessTestAutoNum": true,
+      "enableMngdCtrlActionAccessPref": false,
+      "enableNonCertifiedApexMdCrud": false
+    },
+    "campaignSettings": {
+      "enableAutoCampInfluenceDisabled": false,
+      "enableCampaignHistoryTrackEnabled": false,
+      "enableCampaignInfluence2": false,
+      "enableCampaignMemberTWCF": true
+    },
+    "caseSettings": {
+      "defaultCaseFeedLayoutOn": true,
+      "defaultCaseOwner": "troy@ey.com.ci",
+      "defaultCaseOwnerType": "User",
+      "defaultCaseUser": "troy@ey.com.ci",
+      "enableCaseFeed": true,
+      "enableCollapseEmailThread": true
+    },
+    "contractSettings": {
+      "autoCalculateEndDate": true,
+      "autoExpireContracts": false,
+      "enableContractHistoryTracking": false,
+      "notifyOwnersOnContractExpiration": false
+    },
+    "eACSettings": {
+      "enableEACForEveryonePref": true,
+      "enableInboxActivitySharing": false,
+      "enableInsightsInTimeline": true,
+      "enableInsightsInTimelineEacStd": false
+    },
+    "emailAdministrationSettings": {
+      "enableComplianceBcc": false,
+      "enableEmailConsentManagement": false,
+      "enableEmailSenderIdCompliance": false,
+      "enableEmailSpfCompliance": true,
+      "enableEmailToSalesforce": false,
+      "enableEmailWorkflowApproval": false,
+      "enableEnhancedEmailEnabled": true,
+      "enableHandleBouncedEmails": true,
+      "enableHtmlEmail": false,
+      "enableListEmailLogActivities": true,
+      "enableResendBouncedEmails": false,
+      "enableRestrictTlsToDomains": false,
+      "enableSendViaExchangePref": false,
+      "enableSendViaGmailPref": false,
+      "enableSetMatchingEmailsOnBounce": false,
+      "enableUseOrgFootersForExtTrans": false,
+      "sendEmailsEvenWhenAutomationUpdatesSameRecord": false,
+      "sendMassEmailNotification": true,
+      "sendTextOnlySystemEmails": false
+    },
+    "emailIntegrationSettings": {
+      "doesEmailLogAsEmailMessageInOutlook": true,
+      "doesGmailStayConnectedToSalesforce": true,
+      "enableContactAndEventSync": false,
+      "enableEngageForOutlook": false,
+      "enableGmailIntegration": true,
+      "enableOutlookIntegration": false,
+      "isLayoutCustomizationAllowed": false,
+      "shouldUseTrustedDomainsList": true
+    },
+    "enhancedNotesSettings": {
+      "enableEnhancedNotes": false,
+      "enableTasksOnEnhancedNotes": true
+    },
+    "eventSettings": {
+      "enableDeleteMonitoringData": false,
+      "enableDynamicStreamingChannel": false,
+      "enableLoginForensics": false,
+      "enableStreamingApi": true,
+      "enableTerminateOldestSession": false,
+      "enableTransactionSecurityPolicies": false
+    },
+    "filesConnectSettings": {
+      "enableContentHubAllowed": true,
+      "enableContentHubCvtLinksAllowed": true,
+      "enableContentHubEOSearchLayout": false
+    },
+    "ideasSettings": {
+      "enableChatterProfile": true,
+      "enableHtmlIdea": true,
+      "enableIdeaMultipleCategory": true,
+      "enableIdeaThemes": false,
+      "enableIdeas": true,
+      "enableIdeasControllerExtensions": false,
+      "enableIdeasReputation": false,
+      "halfLife": 2.0
+    },
+    "invocableActionSettings": {
+      "isPartialSaveAllowed": true
+    },
+    "leadConfigSettings": {
+      "doesEnableLeadConvertDefaultSubjectBlankTaskCreation": false,
+      "doesHideOpportunityInConvertLeadWindow": false,
+      "doesPreserveLeadStatus": true,
+      "doesSelectNoOpportunityOnConvertLead": false,
+      "doesTrackHistory": false,
+      "enableConversionsOnMobile": false,
+      "enableOrgWideMergeAndDelete": true,
+      "shouldLeadConvertRequireValidation": true
+    },
+    "mobileSettings": {
+      "dashboardMobile": {
+        "enableDashboardIPadApp": true
+      },
+      "enableImportContactFromDevice": true,
+      "enablePopulateNameManuallyInToday": false,
+      "enableS1EncryptedStoragePref2": false,
+      "enableS1OfflinePref": false
+    },
+    "myDomainSettings": {
+      "canOnlyLoginWithMyDomainUrl": false,
+      "doesApiLoginRequireOrgDomain": false,
+      "enableNativeBrowserForAuthOnAndroid": false,
+      "enableNativeBrowserForAuthOnIos": false,
+      "useStabilizedMyDomainHostnames": true,
+      "useStabilizedSandboxMyDomainHostnames": true
+    },
+    "notificationsSettings": {
+      "enableMobileAppPushNotifications": true,
+      "enableNotifications": true
+    },
+    "opportunitySettings": {
+      "autoActivateNewReminders": true,
+      "customizableProductSchedulesEnabled": false,
+      "doesEnforceStandardOpportunitySaveLogic": true,
+      "enableFindSimilarOpportunities": false,
+      "enableOpportunityFieldHistoryTracking": false,
+      "enableOpportunityTeam": false,
+      "enableUpdateReminders": true
+    },
+    "orgSettings": {
+      "enableCustomerSuccessPortal": false,
+      "enableExtendedMailMerge": false,
+      "enableMakeDeploymentsMandatory": true,
+      "enableManageSelfServiceUsers": false,
+      "enableRADeploymentAttributeOnly": true,
+      "saveMailMergeDocsAsSalesforceDocs": false
+    },
+    "partyDataModelSettings": {
+      "enableAutoSelectIndividualOnMerge": false,
+      "enableConsentManagement": true
+    },
+    "productSettings": {
+      "enableCascadeActivateToRelatedPrices": true,
+      "enableMySettings": true,
+      "enableQuantitySchedule": false,
+      "enableRevenueSchedule": false
+    },
+    "schemaSettings": {
+      "enableAdvancedCMTSecurity": true,
+      "enableAdvancedCSSecurity": true,
+      "enableListCustomSettingCreation": false,
+      "enableSOSLOnCustomSettings": false
+    },
+    "securitySettings": {
+      "canUsersGrantLoginAccess": true,
+      "enableAdminLoginAsAnyUser": false,
+      "enableAuditFieldsInactiveOwner": false,
+      "enableAuraSecureEvalPref": true,
+      "enableRequireHttpsConnection": true,
+      "isTLSv12Required": false,
+      "isTLSv12RequiredCommunities": false,
+      "passwordPolicies": {
+        "enableSetPasswordInApi": true,
+        "historyRestriction": "3",
+        "minimumPasswordLength": "8",
+        "minimumPasswordLifetime": false,
+        "obscureSecretAnswer": false
+      },
+      "sessionSettings": {
+        "allowUserAuthenticationByCertificate": false,
+        "canConfirmEmailChangeInLightningCommunities": false,
+        "disableTimeoutWarning": false,
+        "enableCSPOnEmail": true,
+        "enableCSRFOnGet": true,
+        "enableCSRFOnPost": true,
+        "enableCacheAndAutocomplete": true,
+        "enableClickjackNonsetupSFDC": true,
+        "enableClickjackNonsetupUser": false,
+        "enableClickjackNonsetupUserHeaderless": false,
+        "enableClickjackSetup": true,
+        "enableContentSniffingProtection": true,
+        "enableLightningLogin": true,
+        "enableLightningLoginOnlyWithUserPerm": false,
+        "enablePostForSessions": false,
+        "enableSMSIdentity": true,
+        "enableU2F": false,
+        "enableUpgradeInsecureRequests": true,
+        "enableXssProtection": true,
+        "enforceIpRangesEveryRequest": false,
+        "forceLogoutOnSessionTimeout": true,
+        "forceRelogin": true,
+        "hasRetainedLoginHints": false,
+        "hasUserSwitching": true,
+        "hstsOnForcecomSites": true,
+        "identityConfirmationOnEmailChange": false,
+        "identityConfirmationOnTwoFactorRegistrationEnabled": true,
+        "lockSessionsToDomain": true,
+        "lockSessionsToIp": false,
+        "lockerServiceCSP": true,
+        "lockerServiceFrozenRealm": false,
+        "redirectionWarning": true,
+        "referrerPolicy": true,
+        "requireHttpOnly": false,
+        "requireHttps": true,
+        "securityCentralKillSession": true
+      },
+      "singleSignOnSettings": {
+        "enableForceDelegatedCallout": false,
+        "enableMultipleSamlConfigs": true,
+        "enableSamlJitProvisioning": false,
+        "enableSamlLogin": false
+      }
+    },
+    "sharingSettings": {
+      "enableAssetSharing": true,
+      "enableCommunityUserVisibility": true,
+      "enableExternalSharingModel": true,
+      "enableManagerGroups": false,
+      "enableManualUserRecordSharing": false,
+      "enablePortalUserCaseSharing": true,
+      "enablePortalUserVisibility": true,
+      "enableSecureGuestAccess": false,
+      "enableStandardReportVisibility": false
+    },
+    "systemNotificationSettings": {
+      "disableDowntimeNotifications": false,
+      "disableMaintenanceNotifications": false
+    },
+    "userEngagementSettings": {
+      "canGovCloudUseAdoptionApps": false,
+      "doesScheduledSwitcherRunDaily": false,
+      "enableCustomHelpGlobalSection": false,
+      "enableHelpMenuShowFeedback": true,
+      "enableHelpMenuShowHelp": true,
+      "enableHelpMenuShowNewUser": true,
+      "enableHelpMenuShowSearch": true,
+      "enableHelpMenuShowSfdcContent": true,
+      "enableHelpMenuShowShortcut": true,
+      "enableHelpMenuShowSupport": true,
+      "enableHelpMenuShowTrailhead": true,
+      "enableIBILOptOutDashboards": false,
+      "enableIBILOptOutEvents": false,
+      "enableIBILOptOutReports": false,
+      "enableIBILOptOutTasks": false,
+      "enableLexToClassicFeedbackEnable": false,
+      "enableOrchestrationInSandbox": false,
+      "enableOrgUserAssistEnabled": true,
+      "enableScheduledSwitcher": true,
+      "enableSfdcProductFeedbackSurvey": true,
+      "enableShowSalesforceUserAssist": true,
+      "isAutoTransitionDelayed": false,
+      "isCrucNotificationDisabled": false,
+      "isCustomProfileAutoTransitionDelayed": false,
+      "isLEXWelcomeMatDisabled": false,
+      "isMeetTheAssistantDisabledInClassic": false,
+      "isMeetTheAssistantDisabledInLightning": false,
+      "optimizerAppEnabled": false
+    },
+    "userInterfaceSettings": {
+      "alternateAlohaListView": true,
+      "enableAsyncRelatedLists": false,
+      "enableClickjackUserPageHeaderless": false,
+      "enableCollapsibleSections": true,
+      "enableCollapsibleSideBar": false,
+      "enableCustomObjectTruncate": false,
+      "enableCustomeSideBarOnAllPages": false,
+      "enableDeleteFieldHistory": false,
+      "enableHoverDetails": false,
+      "enableInlineEdit": false,
+      "enableNewPageLayoutEditor": false,
+      "enablePersonalCanvas": false,
+      "enablePrintableListViews": false,
+      "enableQuickCreate": false,
+      "enableTabOrganizer": false
+    },
+    "userManagementSettings": {
+      "enableCanAnswerContainUsername": true,
+      "enableConcealPersonalInfo": true,
+      "enableContactlessExternalIdentityUsers": false,
+      "enableEnhancedPermsetMgmt": false,
+      "enableEnhancedProfileMgmt": true,
+      "enableNewProfileUI": false,
+      "enableScrambleUserData": false,
+      "enableUserSelfDeactivate": false
+    }
+  }
 }

@@ -1,0 +1,54 @@
+<template>
+    <!-- the container element determine the height of the datatable -->
+    <div class={wrapperClass}>
+        <lightning-card>
+            <div slot="title">
+                <div if:false={isSmall} class='related-list-top-border'></div>
+                <div class={titlewrapperClass}>
+                    <div class="slds-grid">
+                        <div class="slds-col  slds-has-flexi-truncate card-header-title">
+                            <div class="slds-media slds-no-space slds-grow">
+                                <lightning-icon class="slds-media__figure" size="small" icon-name="standard:account" alternative-text="Affiliations"></lightning-icon>
+                                <div class="slds-media_body slds-truncate slds-align-middle">
+                                    <h2>
+                                        <span class="slds-page-header__title">
+                                            {componentTitle}<span if:true={isSmall}>&nbsp;({recordCount}{moreRecordsMessage})</span>
+                                        </span>
+                                    </h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slds-col slds-no-flex slds-align_absolute-center">
+                            <lightning-button label="New" title="New" class="slds-m-left_x-small slds-text-body_regular" onclick={openNewAffiliationForm}></lightning-button>
+                        </div>
+                    </div>
+                    <div class="slds-grid" if:false={isSmall}>
+                        <div class="slds-col slds-align-bottom card-subheader">
+                            <div class="slds-text-body--small">{recordCount} {moreRecordsMessage} {sortedByMessage}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <lightning-datatable
+                    if:false={errorMessage}
+                        key-field="id"
+                        data={tableData}
+                        columns={columns}
+                        hide-checkbox-column="true"
+                        enable-infinite-loading="true"
+                        sorted-by={sortedBy}
+                        sorted-direction={sortDirection}
+                        onsort={updateSorting}
+                        onrowaction={handleRowAction}>
+                </lightning-datatable>
+                <div if:true={errorMessage} class="slds-align_absolute-center">
+                    <p>An unexpected erorr has occurred: {errorMessage}</p>
+                </div>
+                <div if:true={displaySpinner} class="slds-align_absolute-center">
+                    <lightning-spinner alternative-text="Loading" size="large"></lightning-spinner>
+                </div>
+            </div>
+        </lightning-card>
+    </div>
+</template>

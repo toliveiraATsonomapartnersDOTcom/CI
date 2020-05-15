@@ -1,0 +1,6 @@
+<design:component>
+    <design:attribute name="filteredTypes" label="Filtered Affiliation Types" description="Enter a comma separated list of Affiliation Type values that this grid should be filtered to display. Leave this blank to return any Type." />
+    <design:attribute name="excludedTypes" label="Excluded Affiliation Types" description="Enter a comma separated list of Affiliation Type values that this grid should NOT display. Leave this blank to return any Type." />
+    <design:attribute name="fieldSet" label="Field Set" description="Enter the name of the field set to be used in this grid" />
+    <design:attribute name="componentTitle" label="Component Title" description="Enter the title for this grid" default="Affiliations"/>
+</design:component>

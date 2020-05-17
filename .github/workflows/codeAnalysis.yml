@@ -22,10 +22,15 @@ jobs:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
 
-    - name: Run Lightning Web Component Linting
+    - name: Run Aura Component Linting
       uses: forcedotcom/salesforcedx-actions@master
       with:
         args: 'force:lightning:lint ./force-app/main/default/aura --exit --verbose'
+
+    - name: Run Lightning Web Component Linting
+      run: 
+       npm install eslint @salesforce/eslint-config-lwc --save-dev
+       npx eslint ./force-app/main/default/lwc
 
     # Runs a single command using the runners shell
     - uses: krukmat/setup-pmd@v0.4

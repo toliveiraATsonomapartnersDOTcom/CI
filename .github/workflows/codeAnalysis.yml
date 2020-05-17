@@ -65,6 +65,7 @@ jobs:
       URL: https://troy-ci-dev-ed.my.salesforce.com
       USERNAME: troy@ey.com.ci
       CLIENTID: 3MVG9Kip4IKAZQEXB5CUNPvpG6ILY3l2Cil5jny3L442H1nnLMxLBhKcUB.VpDgJq0kTedCR9eA==
+      SFDX: /home/runner/work/CI/CI/node_modules/salesforcedx
     steps:
       - uses: actions/checkout@v2
       
@@ -72,12 +73,12 @@ jobs:
         run: npm install sfdx-cli     
           
       - name: Authorize Sandbox
-        run: sfdx force:auth:jwt:grant --clientid $CLIENTID --jwtkeyfile ./buildfiles/server.key --username $USERNAME --instanceurl $URL -a ciSandbox
+        run: $SFDX/sfdx force:auth:jwt:grant --clientid $CLIENTID --jwtkeyfile ./buildfiles/server.key --username $USERNAME --instanceurl $URL -a ciSandbox
       
       - name: Test Sandbox Deploy
-        run: sfdx force:source:deploy -u ciSandbox --verbose -p ./force-app/main/default -c -l RunLocalTests
+        run: $SFDX/sfdx force:source:deploy -u ciSandbox --verbose -p ./force-app/main/default -c -l RunLocalTests
       
       - name: Log out
-        run: sfdx force:auth:logout -u ciSandbox       
+        run: $SFDX/sfdx force:auth:logout -u ciSandbox       
               
         

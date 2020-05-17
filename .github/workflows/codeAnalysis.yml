@@ -23,7 +23,6 @@ jobs:
     - uses: actions/checkout@v2
 
     # Runs a single command using the runners shell
-    - name: Install PMD
-      run: npm install pmd-bin --global
+    - uses: sfdx-actions/setup-pmd@v1
     - name: Run Apex Code Analysis
       run: pmd -d ./force-app/main/default -f text -R apex-quickstart

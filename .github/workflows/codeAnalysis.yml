@@ -36,3 +36,26 @@ jobs:
     - uses: krukmat/setup-pmd@v0.4
     - name: Run Apex Code Analysis
       run: pmd -d ./force-app/main/default -f text -R apex-quickstart
+  TestDeploy:
+    runs-on: ubuntu-latest
+    env:
+      URL: https://test.salesforce.com
+      USERNAME: troy@ey.com.ci
+      CLIENTID: 3MVG9Kip4IKAZQEXB5CUNPvpG6GK_BvKorwe5y2VE1HbcWwKfPwnLO.0_5yoqs2.ZYM27FoBassRbZGIvONnT
+    steps:
+      - uses: actions/checkout@v2
+        
+      - name: Authorize Sandbox
+        uses: forcedotcom/salesforcedx-actions@master
+        with:
+          args: 'force:auth:jwt:grant --clientid $CLIENTID --jwtkeyfile ./buildfiles/server.key --username $USERNAME --instanceurl $URL -a ciSandbox'
+      
+      - name: Test Sandbox Deploy
+        uses: forcedotcom/salesforcedx-actions@master
+        with:
+          args: 'force:source:deploy -u ciSandbox --verbose -p ./force-app/main/default -c -l RunLocalTests'
+      
+      - name: Log out
+        uses: forcedotcom/salesforcedx-actions@master
+        with:
+          args: 'sfdx force:auth:logout -u ciSandbox'

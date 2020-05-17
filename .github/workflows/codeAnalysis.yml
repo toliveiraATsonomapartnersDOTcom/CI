@@ -41,7 +41,7 @@ jobs:
     env:
       URL: https://test.salesforce.com
       USERNAME: troy@ey.com.ci
-      CLIENTID: 3MVG9Kip4IKAZQEXB5CUNPvpG6GK_BvKorwe5y2VE1HbcWwKfPwnLO.0_5yoqs2.ZYM27FoBassRbZGIvONnT
+      CLIENTID: 3MVG9Kip4IKAZQEXB5CUNPvpG6ILY3l2Cil5jny3L442H1nnLMxLBhKcUB.VpDgJq0kTedCR9eA==
     steps:
       - uses: actions/checkout@v2
         

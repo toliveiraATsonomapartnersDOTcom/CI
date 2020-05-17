@@ -28,7 +28,7 @@ jobs:
         args: 'force:lightning:lint ./force-app/main/default/aura --exit --verbose'
 
     - name: Run Lightning Web Component Linting
-      run: 
+      run: |
        npm install eslint @salesforce/eslint-config-lwc --save-dev
        npx eslint ./force-app/main/default/lwc
 

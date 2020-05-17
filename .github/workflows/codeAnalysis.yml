@@ -39,7 +39,7 @@ jobs:
   TestDeploy:
     runs-on: ubuntu-latest
     env:
-      URL: https://test.salesforce.com
+      URL: https://troy-ci-dev-ed.my.salesforce.com
       USERNAME: troy@ey.com.ci
       CLIENTID: 3MVG9Kip4IKAZQEXB5CUNPvpG6ILY3l2Cil5jny3L442H1nnLMxLBhKcUB.VpDgJq0kTedCR9eA==
     steps:

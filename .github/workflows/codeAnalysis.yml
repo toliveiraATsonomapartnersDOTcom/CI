@@ -65,12 +65,16 @@ jobs:
       URL: https://troy-ci-dev-ed.my.salesforce.com
       USERNAME: troy@ey.com.ci
       CLIENTID: 3MVG9Kip4IKAZQEXB5CUNPvpG6ILY3l2Cil5jny3L442H1nnLMxLBhKcUB.VpDgJq0kTedCR9eA==
-      SFDX: /home/runner/work/CI/CI/node_modules/salesforcedx
+      SFDX: ./sfdx-cli
     steps:
       - uses: actions/checkout@v2
       
       - name: Install SFDX
-        run: npm install sfdx-cli     
+        run: |
+          wget https://developer.salesforce.com/media/salesforce-cli/sfdx-linux-amd64.tar.xz
+          mkdir sfdx-cli
+          tar xJf sfdx-linux-amd64.tar.xz -C sfdx-cli --strip-components 1
+          ./sfdx-cli/install     
           
       - name: Authorize Sandbox
         run: $SFDX/sfdx force:auth:jwt:grant --clientid $CLIENTID --jwtkeyfile ./buildfiles/server.key --username $USERNAME --instanceurl $URL -a ciSandbox

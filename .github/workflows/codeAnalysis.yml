@@ -1,0 +1,88 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  CodeAnalysis:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    - uses: actions/checkout@v2
+
+    - name: Run Aura Component Linting
+      uses: forcedotcom/salesforcedx-actions@master
+      with:
+        args: 'force:lightning:lint ./force-app/main/default/aura --exit --verbose'
+
+    - name: Run Lightning Web Component Linting
+      run: |
+       npm install eslint @salesforce/eslint-config-lwc --save-dev
+       npx eslint ./force-app/main/default/lwc
+
+    # Runs a single command using the runners shell
+    - uses: krukmat/setup-pmd@v0.4
+    - name: Run Apex Code Analysis
+      run: pmd -d ./force-app/main/default -f text -R apex-quickstart
+  TestDeploy:
+    runs-on: ubuntu-latest
+    env:
+      URL: https://troy-ci-dev-ed.my.salesforce.com
+      USERNAME: troy@ey.com.ci
+      CLIENTID: 3MVG9Kip4IKAZQEXB5CUNPvpG6ILY3l2Cil5jny3L442H1nnLMxLBhKcUB.VpDgJq0kTedCR9eA==
+    steps:
+      - uses: actions/checkout@v2
+        
+      - name: Authorize Sandbox
+        uses: forcedotcom/salesforcedx-actions@master
+        with:
+          args: 'force:auth:jwt:grant --clientid $CLIENTID --jwtkeyfile ./buildfiles/server.key --username $USERNAME --instanceurl $URL -a ciSandbox'
+      
+      - name: Test Sandbox Deploy
+        uses: forcedotcom/salesforcedx-actions@master
+        with:
+          args: 'force:source:deploy -u ciSandbox --verbose -p ./force-app/main/default -c -l RunLocalTests'
+      
+      - name: Log out
+        uses: forcedotcom/salesforcedx-actions@master
+        with:
+          args: 'sfdx force:auth:logout -u ciSandbox'
+  TestDeployNoAction:
+    runs-on: ubuntu-latest
+    env:
+      URL: https://troy-ci-dev-ed.my.salesforce.com
+      USERNAME: troy@ey.com.ci
+      CLIENTID: 3MVG9Kip4IKAZQEXB5CUNPvpG6ILY3l2Cil5jny3L442H1nnLMxLBhKcUB.VpDgJq0kTedCR9eA==
+      SFDX: ./sfdx-cli
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Install SFDX
+        run: |
+          wget https://developer.salesforce.com/media/salesforce-cli/sfdx-linux-amd64.tar.xz
+          mkdir sfdx-cli
+          tar xJf sfdx-linux-amd64.tar.xz -C sfdx-cli --strip-components 1
+          ./sfdx-cli/install     
+          
+      - name: Authorize Sandbox
+        run: sfdx force:auth:jwt:grant --clientid $CLIENTID --jwtkeyfile ./buildfiles/server.key --username $USERNAME --instanceurl $URL -a ciSandbox
+      
+      - name: Test Sandbox Deploy
+        run: sfdx force:source:deploy -u ciSandbox --verbose -p ./force-app/main/default -c -l RunLocalTests
+      
+      - name: Log out
+        run: sfdx force:auth:logout -u ciSandbox       
+              
+        

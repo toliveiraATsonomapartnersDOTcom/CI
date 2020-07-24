@@ -5,6 +5,7 @@ name: Git Diff
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
 on:
+  workflow_dispatch:
   pull_request:
     branches: [ master ]
 
@@ -17,13 +18,15 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    - name: Setup Java SDK
     - uses: actions/checkout@v2
+    
     - uses: actions/setup-java@v1
       with:
         java-version: '14.0.2' # The JDK version to make available on the path.
         architecture: x64 # (x64 or x86) - defaults to x64
-    - run: java -cp java Main "${{GITHUB.HEAD_REF}}"
+    
+    - name: Execute GitDiff
+      run: java -cp java ./buildfiles/Main "${{GITHUB.HEAD_REF}}"
         
     - name: Install SFDX
       run: |

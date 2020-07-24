@@ -26,7 +26,7 @@ jobs:
         architecture: x64 # (x64 or x86) - defaults to x64
     
     - name: Execute GitDiff
-      run: java -cp java ./buildfiles/Main "${{GITHUB.HEAD_REF}}"
+      run: java -cp java buildfiles/Main.class "${{GITHUB.HEAD_REF}}"
         
     - name: Install SFDX
       run: |

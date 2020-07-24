@@ -15,6 +15,10 @@ jobs:
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
+    env:
+      URL: https://troy-ci-dev-ed.my.salesforce.com
+      USERNAME: troy@ey.com.ci
+      CLIENTID: 3MVG9Kip4IKAZQEXB5CUNPvpG6ILY3l2Cil5jny3L442H1nnLMxLBhKcUB.VpDgJq0kTedCR9eA==
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:

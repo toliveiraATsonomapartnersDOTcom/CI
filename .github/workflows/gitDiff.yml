@@ -32,7 +32,7 @@ jobs:
         architecture: x64 # (x64 or x86) - defaults to x64
     
     - name: Execute GitDiff
-      run: java -cp java -jar ./buildfiles/GitDiff.jar "${{GITHUB.HEAD_REF}}"
+      run: java -cp java -jar ./buildfiles/GitDiff.jar "TroyBranch"
     
     - name: List Files
       run: ls

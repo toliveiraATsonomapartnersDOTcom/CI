@@ -33,6 +33,9 @@ jobs:
     
     - name: Execute GitDiff
       run: java -cp java -jar ./buildfiles/GitDiff.jar "${{GITHUB.HEAD_REF}}"
+    
+    - name: List Files
+      run: ls
         
     - name: Install SFDX
       run: |

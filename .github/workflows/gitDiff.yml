@@ -35,7 +35,7 @@ jobs:
       run: java -cp java -jar ./buildfiles/GitDiff.jar "remotes/origin/TroyBranch"
     
     - name: List Files
-      run: ls
+      run: ls -R
         
     - name: Install SFDX
       run: |

@@ -51,7 +51,7 @@ jobs:
         ./sfdx-cli/install
         
     - name: Authorize Sandbox
-      run: sfdx force:auth:jwt:grant --clientid $CLIENTID --jwtkeyfile ./buildfiles/WorldpayDevHub.key --username $USERNAME --instanceurl $URL -a ciSandbox
+      run: sfdx force:auth:jwt:grant --clientid $CLIENTID --jwtkeyfile ./buildfiles/server.key --username $USERNAME --instanceurl $URL -a ciSandbox
     
     - name: Execute Delete
       run: sfdx force:source:delete -p "ReleaseDeploy\force-app" -c -u ciSandbox

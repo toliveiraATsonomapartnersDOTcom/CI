@@ -34,9 +34,6 @@ jobs:
     - name: Fetch
       run: git fetch --all
     
-    - name: Diff
-      run: git diff origin/TroyBranch --name-status
-    
     - name: Execute GitDiff
       run: java -cp java -jar ./buildfiles/GitDiff.jar refs/remotes/origin/TroyBranch
     

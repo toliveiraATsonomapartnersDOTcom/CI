@@ -51,7 +51,7 @@ jobs:
       run: sfdx force:auth:jwt:grant --clientid $CLIENTID --jwtkeyfile ./buildfiles/server.key --username $USERNAME --instanceurl $URL -a ciSandbox
     
     - name: Execute Delete
-      run: sfdx force:source:delete -p ./ReleaseRemove/force-app -c -u ciSandbox
+      run: sfdx force:source:delete -p ./ReleaseRemove/force-app/main/default -c -u ciSandbox
       
     - name: Execute Deploy
       run: sfdx force:source:deploy -p ./ReleaseDeploy/force-app -c -u ciSandbox

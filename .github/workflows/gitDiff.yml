@@ -31,6 +31,9 @@ jobs:
         java-version: '14.0.2' # The JDK version to make available on the path.
         architecture: x64 # (x64 or x86) - defaults to x64
     
+    - name: Fetch
+      run: git fetch --all
+    
     - name: Diff
       run: git diff master..TroyBranch --name-status
     

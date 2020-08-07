@@ -24,20 +24,21 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
-    - uses: actions/setup-java@v1
+    - uses: actions/setup-dotnet@v1
       with:
-        java-version: '14.0.2' # The JDK version to make available on the path.
-        architecture: x64 # (x64 or x86) - defaults to x64
+        dotnet-version: '3.1.x' # SDK Version to use; x will use the latest version of the 3.1 channel
     
     - name: Fetch
       run: git fetch --all
     
-    - name: Execute GitDiff
-      run: java -cp java -jar ./buildfiles/GitDiff.jar refs/remotes/origin/TroyBranch
+    - name: Run GitDiff from DotNet
+      run: |
+        chmod 777 ./buildfiles/GitDiffCore
+        dotnet .buildfiles/GitDiffCore/GitDiff.dll refs/remotes/origin/TroyBranch
     
     - name: List Files
       run: ls -R
-        
+    
     - name: Install SFDX
       run: |
         wget https://developer.salesforce.com/media/salesforce-cli/sfdx-linux-amd64.tar.xz

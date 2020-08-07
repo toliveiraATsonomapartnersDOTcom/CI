@@ -1,6 +1,6 @@
 {
   "edition": "Developer",
-  "hasSampleData": false,
+  "hasSampleData": true,
   "features": [
     "API",
     "AuthorApex",

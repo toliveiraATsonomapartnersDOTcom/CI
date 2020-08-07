@@ -1,6 +1,7 @@
 public with sharing class AffiliationsGridController {
     @testVisible
     private static final string accountColumnName = 'AccountId';
+	
     @testVisible
     private static final string accountLabelFieldName = 'AccountName';
     @testVisible

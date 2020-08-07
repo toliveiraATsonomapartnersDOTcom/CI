@@ -34,7 +34,7 @@ jobs:
     - name: Run GitDiff from DotNet
       run: |
         chmod 777 ./buildfiles/GitDiffCore
-        dotnet .buildfiles/GitDiffCore/GitDiff.dll refs/remotes/origin/TroyBranch
+        dotnet ./buildfiles/GitDiffCore/GitDiff.dll refs/remotes/origin/TroyBranch
     
     - name: List Files
       run: ls -R
